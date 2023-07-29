@@ -3,7 +3,8 @@
     Number Of Rooms :
     <div [innerText]="numberOfRooms"></div> <!-- Property Binding -->
 </div>
-<div *ngIf="rooms.availableRooms > 0"> <!-- *ngIf Directive -->
+{{ rooms?.availableRooms ?? 'No rooms' }} <!-- nullish coalescing operator (??) -->
+<div *ngIf="rooms?.availableRooms"> <!-- *ngIf Directive -->
     Rooms List :
 </div>
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
