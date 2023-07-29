@@ -2,7 +2,9 @@
 <h1>Welcomw to {{hotelName}} </h1> <!-- String Interpolation -->
 <div [hidden]="hideRooms"> <!-- Property Binding -->
     Number Of Rooms :
-    <div [innerText]="numberOfRooms"></div> <!-- Property Binding -->
+    <!-- [ngStyle] Directive -->
+    <div [ngStyle]="{'color': rooms.availableRooms > 0 ? 'blue':'red'}" [innerText]="numberOfRooms"></div>
+    <!-- Property Binding -->
 </div>
 {{ rooms?.availableRooms ?? 'No rooms' }} <!-- nullish coalescing operator (??) -->
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
