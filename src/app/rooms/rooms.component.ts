@@ -10,10 +10,11 @@ export class RoomsComponent {
   hotelName: string = "Hilton Hotel";
   numberOfRooms: number = 10;
   hideRooms: boolean = false;
-  rooms: Room = {};
-  // totalRooms: 20,
-  // availableRooms: 10,
-  // bookedRooms: 5
+  rooms: Room = {
+    totalRooms: 20,
+    availableRooms: 10,
+    bookedRooms: 5
+  }
   toggle(): void {
     this.hideRooms = !this.hideRooms;
   }
