@@ -33,6 +33,7 @@
             <td>{{room.roomType}}</td>
             <td>{{room.amenities}}</td>
             <td>{{room.price}}</td>
+            <!-- https://angular.io/api/common/DatePipe -->
             <td>{{room.checkinTime | date : 'dd/MM/YYYY'}}</td> <!-- date pipe "date : 'short'" -->
         </tr>
     </table>
