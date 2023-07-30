@@ -17,6 +17,8 @@ export class RoomsComponent implements OnInit {
   }
   roomsList: RoomList[] = [];
 
+  selectedRoom!: RoomList;
+
   constructor() {
     // Constructor should be used when you wan't to inject some services.
     // Constructor should not have any Blocking Code.
@@ -64,5 +66,9 @@ export class RoomsComponent implements OnInit {
 
   toggle(): void {
     this.hideRooms = !this.hideRooms;
+  }
+  selectRoom(room: RoomList) {
+    console.log(room);
+    this.selectedRoom = room;
   }
 }

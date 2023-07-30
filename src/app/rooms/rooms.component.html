@@ -10,8 +10,14 @@
 <!-- {{ roomsList | json }} --> <!-- json pipe -->
 <br>
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
+<div *ngIf="selectedRoom">
+    {{ selectedRoom | json }} <!-- json pipe -->
+</div>
 <div *ngIf="rooms.availableRooms > 0"> <!-- *ngIf Directive -->
     <!-- Here 'rooms' is a valid HTML property of this ('hinv-rooms-list') HTML tag, 
     So will use the Property Binding here.-->
-    <hinv-rooms-list [rooms]="roomsList"></hinv-rooms-list> <!-- Property Binding -->
+    <!-- (selectedRoom)="selectRoom()" Event Binding. -->
+    <!-- (selectedRoom)="selectRoom($event)": this will be the event that is received from the child component. -->
+    <hinv-rooms-list [rooms]="roomsList" (selectedRoom)="selectRoom($event)"></hinv-rooms-list>
+    <!-- Property Binding -->
 </div>

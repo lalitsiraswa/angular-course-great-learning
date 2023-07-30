@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { RoomList } from '../rooms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Room, RoomList } from '../rooms';
 
 @Component({
   selector: 'hinv-rooms-list',
@@ -11,4 +11,14 @@ export class RoomsListComponent {
   // What it will Do: It will make 'rooms' property as an valid HTML property on this ('hinv-rooms-list')
   // HTML Element, So will be able to do Property Binding.  
   @Input() rooms: RoomList[] = [];
+
+  // It Pass/Send the Data To Parent Component.
+  // It will send/pass the data from child component to parent component.
+  // @Output() are actucally an Events.
+  // What it will Do: It attached an event named 'selectedRoom' to this ('hinv-rooms-list') HTML tag,
+  // then will use 'Event Binding' on parent component.
+  @Output() selectedRoom = new EventEmitter<RoomList>();
+  selectRoom(room: RoomList) {
+    this.selectedRoom.emit(room);
+  }
 }
