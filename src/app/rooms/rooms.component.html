@@ -7,7 +7,7 @@
     <!-- Property Binding -->
 </div>
 {{ rooms?.availableRooms ?? 'No rooms' }} <!-- nullish coalescing operator (??) -->
-{{ roomsList | json }} <!-- json pipe -->
+<!-- {{ roomsList | json }} --> <!-- json pipe -->
 <br>
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
 <div *ngIf="rooms.availableRooms > 0"> <!-- *ngIf Directive -->
@@ -25,7 +25,8 @@
         </tr>
         <!-- ngClass Directive -->
         <!-- variable 'e' & 'o' contains boolean values. -->
-        <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of roomsList; let e=even; let o=odd; let i=index">
+        <tr [ngClass]="e ? 'even' : 'odd'"
+            *ngFor="let room of roomsList | slice : 0:3; let e=even; let o=odd; let i=index">
             <!-- variable 'e' & 'o' contains boolean values. -->
             <!-- {{ e }} {{ o }} -->
             <!-- *ngFor Directive -->
