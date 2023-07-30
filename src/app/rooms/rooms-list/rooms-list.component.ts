@@ -9,6 +9,6 @@ import { RoomList } from '../rooms';
 export class RoomsListComponent {
   // It will get the Input/Data from parent.
   // What it will Do: It will make 'rooms' property as an valid HTML property on this ('hinv-rooms-list')
-  // HTML Element, So will be able to do Property Binding. 
+  // HTML Element, So will be able to do Property Binding.  
   @Input() rooms: RoomList[] = [];
 }
