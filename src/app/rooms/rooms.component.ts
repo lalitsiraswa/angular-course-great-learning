@@ -20,7 +20,7 @@ export class RoomsComponent {
     {
       roomNumber: 1,
       roomType: "Delux Room",
-      amenities: "Air Conditioner, Free Wi-Fi, TV, Arthroom, Kitchen",
+      amenities: "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
       price: 500,
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('11-July-2023'),
@@ -30,7 +30,7 @@ export class RoomsComponent {
     {
       roomNumber: 2,
       roomType: "Delux Room",
-      amenities: "Air Conditioner, Free Wi-Fi, TV, Arthroom, Kitchen",
+      amenities: "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
       price: 1000,
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('5-July-2023'),
@@ -40,7 +40,7 @@ export class RoomsComponent {
     {
       roomNumber: 3,
       roomType: "Private Suite",
-      amenities: "Air Conditioner, Free Wi-Fi, TV, Arthroom, Kitchen",
+      amenities: "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
       price: 15000,
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('5-July-2023'),
