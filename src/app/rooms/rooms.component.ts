@@ -6,7 +6,16 @@ import { Room, RoomList } from './rooms';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit {
+  constructor() {
+    // Constructor should be used when you wan't to inject some services.
+    // Constructor should not have any Blocking Code.
+  }
+  ngOnInit(): void {
+    // It is the place where you should write your logic.
+    // It can contains Blocking Code.
+    throw new Error('Method not implemented.');
+  }
   hotelName: string = "Hilton Hotel";
   numberOfRooms: number = 10;
   hideRooms: boolean = false;
