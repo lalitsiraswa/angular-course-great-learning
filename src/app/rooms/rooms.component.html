@@ -7,6 +7,8 @@
     <!-- Property Binding -->
 </div>
 {{ rooms?.availableRooms ?? 'No rooms' }} <!-- nullish coalescing operator (??) -->
+{{ roomsList | json }} <!-- json pipe -->
+<br>
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
 <div *ngIf="rooms.availableRooms > 0"> <!-- *ngIf Directive -->
     Rooms List :
@@ -27,7 +29,7 @@
             <!-- variable 'e' & 'o' contains boolean values. -->
             <!-- {{ e }} {{ o }} -->
             <!-- *ngFor Directive -->
-            <td>{{ i }} {{ e }}</td>
+            <td>{{ i | percent }} {{ e }}</td> <!-- percent pipe -->
             <td>{{ e ? "Even" : "Odd" }} {{e}}</td>
             <td>{{room.roomNumber}}</td>
             <td>{{room.roomType}}</td>
