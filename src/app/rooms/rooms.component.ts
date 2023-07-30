@@ -25,6 +25,7 @@ export class RoomsComponent {
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('11-July-2023'),
       checkoutTime: new Date('13-July-2023'),
+      rating: 4.565736,
     },
     {
       roomNumber: 2,
@@ -34,6 +35,7 @@ export class RoomsComponent {
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('5-July-2023'),
       checkoutTime: new Date('7-July-2023'),
+      rating: 3.485768,
     },
     {
       roomNumber: 3,
@@ -43,6 +45,7 @@ export class RoomsComponent {
       photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
       checkinTime: new Date('5-July-2023'),
       checkoutTime: new Date('7-July-2023'),
+      rating: 2.663557,
     }
   ]
 
