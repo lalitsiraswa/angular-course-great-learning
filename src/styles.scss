@@ -8,3 +8,19 @@
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
 // @import "~bootstrap/dist/css/bootstrap.min.css";
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.even {
+    background-color: steelblue;
+    color: white;
+}
+
+.odd {
+    background-color: tomato;
+    color: white;
+}

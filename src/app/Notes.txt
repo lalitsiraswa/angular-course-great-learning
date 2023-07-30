@@ -1,0 +1,5 @@
+// Ways For Component Interaction
+
+1. Using @Input and @Output
+2. Using @ViewChild and @ContentChild
+3. Using Service

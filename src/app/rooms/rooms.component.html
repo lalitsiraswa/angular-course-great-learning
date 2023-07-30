@@ -11,35 +11,7 @@
 <br>
 <button (click)="toggle()">Toggle</button> <!-- Event Binding -->
 <div *ngIf="rooms.availableRooms > 0"> <!-- *ngIf Directive -->
-    Rooms List :
-    <!-- {{ roomList }} -->
-    <table *ngIf="roomsList.length > 0" class="table">
-        <tr>
-            <th>Index</th>
-            <th>Even/Odd</th>
-            <th>Room Number</th>
-            <th>Room Type</th>
-            <th>Room Amenities</th>
-            <th>Room Price</th>
-            <th>Checkin Time</th>
-            <th>Rating</th>
-        </tr>
-        <!-- ngClass Directive -->
-        <!-- variable 'e' & 'o' contains boolean values. -->
-        <tr [ngClass]="e ? 'even' : 'odd'"
-            *ngFor="let room of roomsList | slice : 0:3; let e=even; let o=odd; let i=index">
-            <!-- variable 'e' & 'o' contains boolean values. -->
-            <!-- {{ e }} {{ o }} -->
-            <!-- *ngFor Directive -->
-            <td>{{ i | percent }} {{ e }}</td> <!-- percent pipe -->
-            <td>{{ e ? "Even" : "Odd" }} {{e}}</td>
-            <td>{{room.roomNumber}}</td>
-            <td>{{room.roomType}}</td>
-            <td>{{room.amenities | titlecase}}</td> <!-- lowercase/uppercase/titlecase pipe  -->
-            <td>{{room.price | currency: 'INR'}}</td> <!-- currency pipe -->
-            <!-- https://angular.io/api/common/DatePipe -->
-            <td>{{room.checkinTime | date : 'dd/MM/YYYY'}}</td> <!-- date pipe "date : 'short'" -->
-            <td>{{room.rating | number: '1.1-2'}}</td> <!-- Decimal(number) pipe "number: '1.0-0'" -->
-        </tr>
-    </table>
+    <!-- Here 'rooms' is a valid HTML property of this ('hinv-rooms-list') HTML tag, 
+    So will use the Property Binding here.-->
+    <hinv-rooms-list [rooms]="roomsList"></hinv-rooms-list> <!-- Property Binding -->
 </div>
