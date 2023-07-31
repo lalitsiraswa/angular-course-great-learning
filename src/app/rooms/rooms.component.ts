@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 
 @Component({
@@ -6,7 +6,7 @@ import { Room, RoomList } from './rooms';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit, DoCheck {
   hotelName: string = "Hilton Hotel";
   numberOfRooms: number = 10;
   hideRooms: boolean = false;
@@ -23,6 +23,17 @@ export class RoomsComponent implements OnInit {
   constructor() {
     // Constructor should be used when you wan't to inject some services.
     // Constructor should not have any Blocking Code.
+  }
+  ngDoCheck(): void {
+    // This ngDoCheck() Event/Hook is something which will be executed everytime you raise any event
+    // irrespective of where this component is implemented/available, in case it is active it will listen 
+    // to any changes which has happen inside your entire application, So implementing this lifecycle Hook 
+    // is very costly.
+    // NOTE: Another thing you should keep in mind is, you should not implement 'ngOnChanges()' and 'ngDoCheck()' 
+    // together on same component, because both are going to do the same thing, the 'ngOnChanges()' will detect 
+    // any changes to your '@Input()' values on the other hand 'ngDoCheck()' will detect any changes inside your 
+    // Application.
+    console.log("ngDoCheck is called!");
   }
   ngOnInit(): void {
     // It is the place where you should write your logic.
