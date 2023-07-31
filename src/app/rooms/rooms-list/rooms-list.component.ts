@@ -1,10 +1,24 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Room, RoomList } from '../rooms';
+
+// There are some rules before you can actually go head and apply changeDetection strategy to 
+// your component.
+// Default Angular sets : 'changeDetection: ChangeDetectionStrategy.Default';
+// On Default Mode : Any event will cause the entire 'changeDetection' to run for your Application.
+
+// 'OnPush' Mode : 
+// OnPush ChangeDetection strategy can only be applied in case you are not modifing any Data 
+// internally in that particular component, How we can achived it: By using @Input() and @Output.
+// Here we are going to apply on 'rooms-list' component because it uses @Input() and @Output,
+// So it doesn't change the Data internally, It depends on the Data that is comming from Outside
+// source i.e Parent.
 
 @Component({
   selector: 'hinv-rooms-list',
   templateUrl: './rooms-list.component.html',
-  styleUrls: ['./rooms-list.component.scss']
+  styleUrls: ['./rooms-list.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RoomsListComponent {
   // It will get the Input/Data from parent.

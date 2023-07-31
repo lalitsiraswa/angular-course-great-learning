@@ -14,7 +14,8 @@ Rooms List :
     </tr>
     <!-- ngClass Directive -->
     <!-- variable 'e' & 'o' contains boolean values. -->
-    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of rooms | slice : 0:3; let e=even; let o=odd; let i=index">
+    <!-- | slice : 0:3 pipe -->
+    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of rooms; let e=even; let o=odd; let i=index">
         <!-- variable 'e' & 'o' contains boolean values. -->
         <!-- {{ e }} {{ o }} -->
         <!-- *ngFor Directive -->

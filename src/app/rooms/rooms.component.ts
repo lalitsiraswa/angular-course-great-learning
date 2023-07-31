@@ -71,4 +71,26 @@ export class RoomsComponent implements OnInit {
     console.log(room);
     this.selectedRoom = room;
   }
+  addRoom() {
+    const room: RoomList = {
+      roomNumber: 4,
+      roomType: "Delux Room",
+      amenities: "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
+      price: 5000,
+      photos: "https://www.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_10332581.htm#query=hotel%20room&position=0&from_view=keyword&track=ais",
+      checkinTime: new Date('15-July-2023'),
+      checkoutTime: new Date('17-July-2023'),
+      rating: 3.98675,
+    }
+    // this.roomsList.push(room);
+    // Concept of Immutability says: We should always retun a new Instance/Object.
+    // This 'roomsList' property which is getting binded to the child component, What we are doing right now, we are pushing the record in this perticular array.
+    // Concept of Immutability : Whenever you are working with 'ChangeDetectionStrategy.OnPush' strategy '.OnPush' the Data you are trying assign should not be Mutable,
+    // So it mean's when we apply .push we are actually changing the roomList property.
+    // But the Concept of Immutability says: We should always retun a new Instance/Object.
+    // So rather than actually modifing the roomList directly, what we need to do is we have to return a new object everytime, when we modify an Instance/Object/Arrays whatever.
+    // Whenever you are trying to modify, you shoud return a new Instance, that's why we can't use 'this.roomsList.push(room);'
+    this.roomsList = [...this.roomsList, room]; // Using Spread Operator
+    console.log(room);
+  }
 }

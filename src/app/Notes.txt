@@ -3,3 +3,15 @@
 1. Using @Input and @Output
 2. Using @ViewChild and @ContentChild
 3. Using Service
+
+// There are some rules before you can actually go head and apply changeDetection strategy to 
+// your component.
+Default Angular sets : 'changeDetection: ChangeDetectionStrategy.Default';
+On Default Mode : Any event will cause the entire 'changeDetection' to run for your Application.
+
+'OnPush' : 
+OnPush ChangeDetection strategy can only be applied in case you are not modifing any Data 
+internelly in that particular component, How we can achived it: By using @Input() and @Output.
+Here we are going to apply on 'rooms-list' component because it uses @Input() and @Output,
+So it doesn't change the Data internally, It depends on the Data that is comming from Outside
+source i.e Parent. 
