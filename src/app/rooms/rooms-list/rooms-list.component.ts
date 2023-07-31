@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Room, RoomList } from '../rooms';
 
 // There are some rules before you can actually go head and apply changeDetection strategy to 
@@ -20,11 +20,13 @@ import { Room, RoomList } from '../rooms';
   // changeDetection: ChangeDetectionStrategy.Default,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RoomsListComponent {
+export class RoomsListComponent implements OnChanges {
   // It will get the Input/Data from parent.
   // What it will Do: It will make 'rooms' property as an valid HTML property on this ('hinv-rooms-list')
   // HTML Element, So will be able to do Property Binding.  
   @Input() rooms: RoomList[] = [];
+
+  @Input() title: string = '';
 
   // It Pass/Send the Data To Parent Component.
   // It will send/pass the data from child component to parent component.
@@ -32,6 +34,14 @@ export class RoomsListComponent {
   // What it will Do: It attached an event named 'selectedRoom' to this ('hinv-rooms-list') HTML tag,
   // then will use 'Event Binding' on parent component.
   @Output() selectedRoom = new EventEmitter<RoomList>();
+  ngOnChanges(changes: SimpleChanges): void {
+    // Whenever you change your @Input() value that will come as property(changes);
+    console.log(changes);
+    if (changes['title']) {
+      console.log(this.title);
+      this.title = changes['title'].currentValue.toUpperCase();
+    }
+  }
   selectRoom(room: RoomList) {
     this.selectedRoom.emit(room);
   }

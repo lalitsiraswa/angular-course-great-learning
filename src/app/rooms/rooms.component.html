@@ -21,6 +21,6 @@
     So will use the Property Binding here.-->
     <!-- (selectedRoom)="selectRoom()" Event Binding. -->
     <!-- (selectedRoom)="selectRoom($event)": this will be the event that is received from the child component. -->
-    <hinv-rooms-list [rooms]="roomsList" (selectedRoom)="selectRoom($event)"></hinv-rooms-list>
+    <hinv-rooms-list [rooms]="roomsList" [title]="title" (selectedRoom)="selectRoom($event)"></hinv-rooms-list>
     <!-- Property Binding -->
 </div>

@@ -15,3 +15,7 @@ internelly in that particular component, How we can achived it: By using @Input(
 Here we are going to apply on 'rooms-list' component because it uses @Input() and @Output,
 So it doesn't change the Data internally, It depends on the Data that is comming from Outside
 source i.e Parent. 
+
+ngOnChanges(): ngOnChanges() lifeCycleHook can be applied on a component which has @Input() property.
+You cannot applied ngOnChanges() lifeCycleHook any-where else.
+You can only apply on component or a Directive which has the @Input() property.
